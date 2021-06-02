@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiSaludar", "ApiSaludar\ApiSaludar.csproj", "{07DF826B-CA8C-4594-8947-379AF501FFFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Layers", "1.Layers", "{82C2F181-3DB4-4A73-8E69-93E75B80173A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 Servicios", "1.1 Servicios", "{1CB3F30F-FB48-4F43-9460-B85E339FF16F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.2 Business", "1.2 Business", "{80EA3A9F-DAA7-4006-92F3-00F723D115B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.3 DataAccess", "1.3 DataAccess", "{D893E3A6-6D85-4376-8E0D-807B4F5AEE35}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.4 CrossCutting", "1.4 CrossCutting", "{1CAF36E1-F1CA-4527-A68E-6E10216AAF7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07DF826B-CA8C-4594-8947-379AF501FFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07DF826B-CA8C-4594-8947-379AF501FFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07DF826B-CA8C-4594-8947-379AF501FFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07DF826B-CA8C-4594-8947-379AF501FFFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{07DF826B-CA8C-4594-8947-379AF501FFFA} = {1CB3F30F-FB48-4F43-9460-B85E339FF16F}
+		{1CB3F30F-FB48-4F43-9460-B85E339FF16F} = {82C2F181-3DB4-4A73-8E69-93E75B80173A}
+		{80EA3A9F-DAA7-4006-92F3-00F723D115B5} = {82C2F181-3DB4-4A73-8E69-93E75B80173A}
+		{D893E3A6-6D85-4376-8E0D-807B4F5AEE35} = {82C2F181-3DB4-4A73-8E69-93E75B80173A}
+		{1CAF36E1-F1CA-4527-A68E-6E10216AAF7F} = {82C2F181-3DB4-4A73-8E69-93E75B80173A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {713F910E-E710-4F21-80E2-84B829208F72}
+	EndGlobalSection
+EndGlobal
