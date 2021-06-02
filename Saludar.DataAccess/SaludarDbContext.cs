@@ -1,12 +1,16 @@
 ﻿namespace Saludar.DataAccess
 {
-    public class SaludarDbContext //: DbContext
-    {
-        //public SaludarDbContext(DbContextOptions<RappiDbContext> options)
-        //   : base(options)
-        //{
-        //}
+    using Microsoft.EntityFrameworkCore;
+    using Saludar.EntitiesDto;
 
-        //public DbSet<TiposDocumentoEntityDto> TiposDocumentos { get; set; }
+
+    public class SaludarDbContext : DbContext
+    {
+        public SaludarDbContext(DbContextOptions<SaludarDbContext> options)
+           : base(options)
+        {
+        }
+
+        public DbSet<IdiomaEntityDto> Idiomas { get; set; }
     }
 }

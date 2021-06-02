@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Saludar.DataAccess\Saludar.DataAccess.csproj" />
+    <ProjectReference Include="..\Saludar.EntitiesDto\Saludar.EntitiesDto.csproj" />
+  </ItemGroup>
+
 </Project>

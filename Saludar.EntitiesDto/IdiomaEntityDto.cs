@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class IdiomaDto
+    public class IdiomaEntityDto
     {
         public Guid IdIdioma { get; set; }
 
