@@ -1,6 +1,6 @@
 ﻿namespace Saludar.Business.IBusiness
 {
-    using Saludar.Business.ModelsView;
+    using Saludar.Business.ModelsView.Idioma;
 
     public interface IIdiomaBusiness
     {

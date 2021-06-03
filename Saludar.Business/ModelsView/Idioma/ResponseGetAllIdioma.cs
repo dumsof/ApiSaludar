@@ -1,4 +1,4 @@
-﻿namespace Saludar.Business.ModelsView
+﻿namespace Saludar.Business.ModelsView.Idioma
 {
     using Saludar.EntitiesDto;
     using Saludar.EntitiesDto.Mensaje;

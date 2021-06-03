@@ -2,7 +2,7 @@
 {
     using Microsoft.AspNetCore.Mvc;
     using Saludar.Business.IBusiness;
-    using Saludar.Business.ModelsView;
+    using Saludar.Business.ModelsView.Idioma;
     using System.Net;
 
     [Route("api/[controller]/[action]")]

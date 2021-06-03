@@ -44,8 +44,10 @@ namespace ApiSaludar
             services.AddDbContext<SaludarDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DataBaseConexion")));
 
             services.AddScoped<IIdiomaBusiness, IdiomaBusiness>();
+            services.AddScoped<ISaludoBusiness, SaludoBusiness>();
 
             services.AddScoped<IIdiomaRepository, IdiomaRepository>();
+            services.AddScoped<ISaludoRepository, SaludoRepository>();
 
             services.AddSwaggerGen(c =>
             {
