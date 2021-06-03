@@ -15,7 +15,7 @@
 
         public ResponseGetSaludo GetSaludo(RequestGetSaludo request)
         {
-            var saludo = this.repository.GetSaludo(request.IdIdioma);
+            var saludo = this.repository.GetSaludo(request.IdIdioma, request.IdAccion);
 
             return new ResponseGetSaludo
             {

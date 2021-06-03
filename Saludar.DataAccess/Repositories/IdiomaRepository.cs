@@ -17,7 +17,7 @@
 
         public IEnumerable<IdiomaEntityDto> GetAllIdiomas()
         {
-            var idioma = this.dbContext.Idiomas.ToList();
+            var idioma = this.dbContext.Idiomas.OrderBy(o=> o.Ordenado).ToList();
             return idioma;
         }
     }

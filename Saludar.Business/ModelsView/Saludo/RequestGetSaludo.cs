@@ -6,6 +6,8 @@
     {
         public Guid IdIdioma { get; set; }
 
+        public Guid IdAccion { get; set; }
+
         public string Nombre { get; set; }
     }
 }

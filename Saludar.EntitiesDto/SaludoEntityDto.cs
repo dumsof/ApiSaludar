@@ -10,6 +10,8 @@
 
         public Guid IdIdioma { get; set; }
 
+        public Guid IdAccion{ get; set; }
+
         public string DescripcionSaludo { get; set; }
     }
 }

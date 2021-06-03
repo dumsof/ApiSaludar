@@ -13,7 +13,9 @@
 
         public DbSet<IdiomaEntityDto> Idiomas { get; set; }
 
-        public DbSet<SaludoEntityDto> Saludos { get; set; }
+        public DbSet<AccionBotonEntityDto> Acciones { get; set; }
+
+        public DbSet<SaludoEntityDto> Saludos { get; set; }        
 
     }
 }

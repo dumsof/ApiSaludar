@@ -3,13 +3,13 @@
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class IdiomaEntityDto
+    public class AccionBotonEntityDto
     {
         [Key]
-        public Guid IdIdioma { get; set; }
+        public Guid IdAccion { get; set; }
 
         public int Ordenado { get; set; }
 
-        public string DescripcionIdioma { get; set; }
+        public string DescripcionAccion { get; set; }
     }
 }

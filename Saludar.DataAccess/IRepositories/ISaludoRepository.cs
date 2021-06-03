@@ -5,6 +5,6 @@
 
     public interface ISaludoRepository
     {
-        SaludoEntityDto GetSaludo(Guid idIdioma);
+        SaludoEntityDto GetSaludo(Guid idIdioma, Guid idAccion);
     }
 }

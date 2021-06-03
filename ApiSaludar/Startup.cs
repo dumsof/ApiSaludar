@@ -7,6 +7,7 @@ namespace ApiSaludar
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Microsoft.IdentityModel.Logging;
     using Microsoft.OpenApi.Models;
     using Saludar.Business.Business;
     using Saludar.Business.IBusiness;
@@ -28,6 +29,10 @@ namespace ApiSaludar
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.Configure<IISServerOptions>(options =>
+            //{
+            //    options.AutomaticAuthentication = false;
+            //});
 
             services.AddAuthentication(IISServerDefaults.AuthenticationScheme);
 
@@ -45,9 +50,11 @@ namespace ApiSaludar
 
             services.AddScoped<IIdiomaBusiness, IdiomaBusiness>();
             services.AddScoped<ISaludoBusiness, SaludoBusiness>();
+            services.AddScoped<IAccionBotonBusiness, AccionBotonBusiness>();
 
             services.AddScoped<IIdiomaRepository, IdiomaRepository>();
             services.AddScoped<ISaludoRepository, SaludoRepository>();
+            services.AddScoped<IAccionBotonRepository, AccionBotonRepository>();
 
             services.AddSwaggerGen(c =>
             {
@@ -60,12 +67,17 @@ namespace ApiSaludar
         {
             if (env.IsDevelopment())
             {
+                IdentityModelEventSource.ShowPII = true;
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Saludar v1"));
+
+
             }
 
             app.UseRouting();
+
+            app.UseCors(EnableCors);
 
             app.UseAuthorization();
 
