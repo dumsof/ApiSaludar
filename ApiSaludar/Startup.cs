@@ -1,5 +1,6 @@
 namespace ApiSaludar
 {
+    using ApiSaludar.Controllers.ExceptionFilter;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Server.IIS;
@@ -36,12 +37,12 @@ namespace ApiSaludar
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(IISServerDefaults.AuthenticationScheme);
+
             services.Configure<IISServerOptions>(options =>
             {
                 options.AutomaticAuthentication = false;
             });
-
-
 
             services.AddCors(options =>
             {
@@ -67,8 +68,6 @@ namespace ApiSaludar
 
             services.Configure<List<Message>>(Configuration.GetSection("Message"));
 
-            services.AddAuthentication(IISServerDefaults.AuthenticationScheme);
-
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Saludar", Version = "v1" });
@@ -83,6 +82,8 @@ namespace ApiSaludar
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //app.UseMiddleware<ExceptionMiddleware>();
+
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("../swagger/v1/swagger.json", "Api Saludar v1"));
 
@@ -90,12 +91,11 @@ namespace ApiSaludar
             {
                 IdentityModelEventSource.ShowPII = true;
                 app.UseDeveloperExceptionPage();
-                
             }
 
-            app.UseRouting();
-
             app.UseCors(EnableCors);
+
+            app.UseRouting();
 
             app.UseAuthorization();
 

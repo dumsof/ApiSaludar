@@ -31,5 +31,70 @@
             <response code="404">No existen datos para la consulta realizada.</response>
             <response code="500">Error inesperado.</response>
         </member>
+        <member name="T:ApiSaludar.Controllers.ActionFilter.ValidateModelAttribute">
+            <summary>
+            Defines the <see cref="T:ApiSaludar.Controllers.ActionFilter.ValidateModelAttribute" />
+            </summary>
+        </member>
+        <member name="M:ApiSaludar.Controllers.ActionFilter.ValidateModelAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            The OnActionExecuting
+            </summary>
+            <param name="context">The context<see cref="T:Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext"/></param>
+        </member>
+        <member name="T:ApiSaludar.Controllers.ValidationModels.ValidationError">
+            <summary>
+            Defines the <see cref="T:ApiSaludar.Controllers.ValidationModels.ValidationError" />
+            </summary>
+        </member>
+        <member name="P:ApiSaludar.Controllers.ValidationModels.ValidationError.NombreCampo">
+            <summary>
+            Gets the Field
+            </summary>
+        </member>
+        <member name="P:ApiSaludar.Controllers.ValidationModels.ValidationError.MensajeValidacion">
+            <summary>
+            Gets the Message
+            </summary>
+        </member>
+        <member name="M:ApiSaludar.Controllers.ValidationModels.ValidationError.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ApiSaludar.Controllers.ValidationModels.ValidationError"/> class.
+            </summary>
+            <param name="field">The field<see cref="T:System.String"/></param>
+            <param name="message">The message<see cref="T:System.String"/></param>
+        </member>
+        <member name="T:ApiSaludar.Controllers.ValidationModels.ValidationFailedResult">
+            <summary>
+            Defines the <see cref="T:ApiSaludar.Controllers.ValidationModels.ValidationFailedResult" />
+            </summary>
+        </member>
+        <member name="M:ApiSaludar.Controllers.ValidationModels.ValidationFailedResult.#ctor(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ApiSaludar.Controllers.ValidationModels.ValidationFailedResult"/> class.
+            </summary>
+            <param name="modelState">The modelState<see cref="T:Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary"/></param>
+        </member>
+        <member name="T:ApiSaludar.Controllers.ValidationModels.ValidationResultModel">
+            <summary>
+            Defines the <see cref="T:ApiSaludar.Controllers.ValidationModels.ValidationResultModel" />
+            </summary>
+        </member>
+        <member name="P:ApiSaludar.Controllers.ValidationModels.ValidationResultModel.TipoMensaje">
+            <summary>
+            Mensaje con la definicion del tipo de validacion, en este caso para los campos.
+            </summary>
+        </member>
+        <member name="P:ApiSaludar.Controllers.ValidationModels.ValidationResultModel.Errores">
+            <summary>
+            almacena los datos del nombre del campo y su respectiva validacion que no cumplio.
+            </summary>
+        </member>
+        <member name="M:ApiSaludar.Controllers.ValidationModels.ValidationResultModel.#ctor(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+            <summary>
+            DUM: Metodo que permite obtener o capturar las validaciones del models con sus mensajes de validación <see cref="T:ApiSaludar.Controllers.ValidationModels.ValidationResultModel"/> class.
+            </summary>
+            <param name="modelState">objeto donde se encuentra el nombre de la propiedad y el mensaje de validación<see cref="T:Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary"/></param>
+        </member>
     </members>
 </doc>
