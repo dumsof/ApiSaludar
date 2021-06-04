@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -13,9 +13,21 @@
     <ProjectReference Include="..\Saludar.Business\Saludar.Business.csproj" />
     <ProjectReference Include="..\Saludar.DataAccess\Saludar.DataAccess.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ApiSaludar.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <!--DUM: para cuando se publica en iis se ejecute fuera del proceso-->
   <PropertyGroup>
     <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
     <UserSecretsId>77b8cb20-d975-487a-a9c0-a14f57026eb0</UserSecretsId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>ApiSaludar.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>ApiSaludar.xml</DocumentationFile>
   </PropertyGroup>
 </Project>

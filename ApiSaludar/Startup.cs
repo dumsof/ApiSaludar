@@ -14,6 +14,9 @@ namespace ApiSaludar
     using Saludar.DataAccess;
     using Saludar.DataAccess.IRepositories;
     using Saludar.DataAccess.Repositories;
+    using System;
+    using System.IO;
+    using System.Reflection;
 
     public class Startup
     {
@@ -29,12 +32,12 @@ namespace ApiSaludar
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.Configure<IISServerOptions>(options =>
-            //{
-            //    options.AutomaticAuthentication = false;
-            //});
+            services.Configure<IISServerOptions>(options =>
+            {
+                options.AutomaticAuthentication = false;
+            });
 
-            services.AddAuthentication(IISServerDefaults.AuthenticationScheme);
+
 
             services.AddCors(options =>
             {
@@ -56,9 +59,16 @@ namespace ApiSaludar
             services.AddScoped<ISaludoRepository, SaludoRepository>();
             services.AddScoped<IAccionBotonRepository, AccionBotonRepository>();
 
+            services.AddAuthentication(IISServerDefaults.AuthenticationScheme);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Saludar", Version = "v1" });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
 
@@ -70,7 +80,7 @@ namespace ApiSaludar
                 IdentityModelEventSource.ShowPII = true;
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Saludar v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("../swagger/v1/swagger.json", "Api Saludar v1"));
 
 
             }

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiSaludar</name>
+    </assembly>
+    <members>
+        <member name="M:ApiSaludar.Controllers.AccionController.ObtenerTodasAccionesBoton">
+            <summary>
+            Operación para obtenre las acciones o eventos que realizan los botones al saludar.
+            </summary>
+            <response code="200">Operación realizada con éxito.</response>
+            <response code="401">No existen permisos para utilizar el servicio.</response>
+            <response code="404">No existen datos para la consulta realizada.</response>
+            <response code="500">Error inesperado.</response>
+        </member>
+        <member name="M:ApiSaludar.Controllers.IdiomaController.ObtenerTodosIdioma">
+            <summary>
+            Operación para obtener todos los idiomas registrados en el sistema.
+            </summary>
+            <response code="200">Operación realizada con éxito.</response>
+            <response code="401">No existen permisos para utilizar el servicio.</response>
+            <response code="404">No existen datos para la consulta realizada.</response>
+            <response code="500">Error inesperado.</response>
+        </member>
+        <member name="M:ApiSaludar.Controllers.SaludoController.ObtenerSaludoIdioma(Saludar.Business.ModelsView.Saludo.RequestGetSaludo)">
+            <summary>
+            Operación para obtener el saludo segun el idioma y la accion o tipo de saludo, nombre, despedida.
+            </summary>
+            <response code="200">Operación realizada con éxito.</response>
+            <response code="401">No existen permisos para utilizar el servicio.</response>
+            <response code="404">No existen datos para la consulta realizada.</response>
+            <response code="500">Error inesperado.</response>
+        </member>
+    </members>
+</doc>
