@@ -1,33 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>   
+	<UserSecretsId>79a3edd0-2092-40a2-a04d-dcb46d5ca9ed</UserSecretsId>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.6" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.6" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Saludar.Business\Saludar.Business.csproj" />
-    <ProjectReference Include="..\Saludar.DataAccess\Saludar.DataAccess.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Saludar.Business\Saludar.Business.csproj" />
+		<ProjectReference Include="..\Saludar.DataAccess\Saludar.DataAccess.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="ApiSaludar.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <!--DUM: para cuando se publica en iis se ejecute fuera del proceso-->
-  <PropertyGroup>
-    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
-    <UserSecretsId>77b8cb20-d975-487a-a9c0-a14f57026eb0</UserSecretsId>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>ApiSaludar.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>ApiSaludar.xml</DocumentationFile>
-  </PropertyGroup>
+	<ItemGroup>
+		<None Update="ApiSaludar.xml">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<!--DUM: para cuando se publica en iis se ejecute fuera del proceso-->
+	<PropertyGroup>
+		<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+	<UserSecretsId>79a3edd0-2092-40a2-a04d-dcb46d5ca9ed</UserSecretsId>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DocumentationFile>ApiSaludar.xml</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DocumentationFile>ApiSaludar.xml</DocumentationFile>
+	</PropertyGroup>
 </Project>

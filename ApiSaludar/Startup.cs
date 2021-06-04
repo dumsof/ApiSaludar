@@ -32,12 +32,7 @@ namespace ApiSaludar
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<IISServerOptions>(options =>
-            {
-                options.AutomaticAuthentication = false;
-            });
-
-
+            services.AddAuthentication(IISServerDefaults.AuthenticationScheme);           
 
             services.AddCors(options =>
             {
@@ -57,9 +52,7 @@ namespace ApiSaludar
 
             services.AddScoped<IIdiomaRepository, IdiomaRepository>();
             services.AddScoped<ISaludoRepository, SaludoRepository>();
-            services.AddScoped<IAccionBotonRepository, AccionBotonRepository>();
-
-            services.AddAuthentication(IISServerDefaults.AuthenticationScheme);
+            services.AddScoped<IAccionBotonRepository, AccionBotonRepository>();            
 
             services.AddSwaggerGen(c =>
             {
@@ -75,12 +68,14 @@ namespace ApiSaludar
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("../swagger/v1/swagger.json", "Api Saludar v1"));
+
             if (env.IsDevelopment())
             {
                 IdentityModelEventSource.ShowPII = true;
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("swagger/v1/swagger.json", "Api Saludar v1"));
+               
             }
 
             app.UseRouting();
