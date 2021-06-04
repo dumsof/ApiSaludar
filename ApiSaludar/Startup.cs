@@ -14,7 +14,11 @@ namespace ApiSaludar
     using Saludar.DataAccess;
     using Saludar.DataAccess.IRepositories;
     using Saludar.DataAccess.Repositories;
+    using Saludar.Mensajes;
+    using Saludar.Mensajes.IMensaje;
+    using Saludar.Mensajes.Mensaje;
     using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Reflection;
 
@@ -58,6 +62,10 @@ namespace ApiSaludar
             services.AddScoped<IIdiomaRepository, IdiomaRepository>();
             services.AddScoped<ISaludoRepository, SaludoRepository>();
             services.AddScoped<IAccionBotonRepository, AccionBotonRepository>();
+
+            services.AddSingleton<IMessageManagement, MessageManagement>();
+
+            services.Configure<List<Message>>(Configuration.GetSection("Message"));
 
             services.AddAuthentication(IISServerDefaults.AuthenticationScheme);
 

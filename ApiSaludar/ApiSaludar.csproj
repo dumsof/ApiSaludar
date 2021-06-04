@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Saludar.Business\Saludar.Business.csproj" />
     <ProjectReference Include="..\Saludar.DataAccess\Saludar.DataAccess.csproj" />
+    <ProjectReference Include="..\Saludar.Mensaje\Saludar.Mensajes.csproj" />
   </ItemGroup>
 
   <ItemGroup>

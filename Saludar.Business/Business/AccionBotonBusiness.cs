@@ -25,9 +25,8 @@
                     EstadoTransaccion = false,
                     Mensaje = new Mensaje
                     {
-                        Identificador = -1,
-                        Contenido = "No existe información",
-                        Titulo = "No existen registros"
+                        Identificador = 1,
+                        Contenido = "No existe información"
                     }
                 };
             }

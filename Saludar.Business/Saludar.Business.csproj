@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Saludar.DataAccess\Saludar.DataAccess.csproj" />
     <ProjectReference Include="..\Saludar.EntitiesDto\Saludar.EntitiesDto.csproj" />
+    <ProjectReference Include="..\Saludar.Mensaje\Saludar.Mensajes.csproj" />
   </ItemGroup>
 
 </Project>

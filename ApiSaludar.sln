@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.TestUnitario", "2.TestUni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiSaludar.Pruebas", "ApiSaludar.Pruebas\ApiSaludar.Pruebas.csproj", "{4C73467F-D906-47F0-A139-B4414AE2DB71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saludar.Mensajes", "Saludar.Mensaje\Saludar.Mensajes.csproj", "{C0673EC3-D1EC-4ABE-A9F3-2B3E28CDCF75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{4C73467F-D906-47F0-A139-B4414AE2DB71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C73467F-D906-47F0-A139-B4414AE2DB71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C73467F-D906-47F0-A139-B4414AE2DB71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0673EC3-D1EC-4ABE-A9F3-2B3E28CDCF75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0673EC3-D1EC-4ABE-A9F3-2B3E28CDCF75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0673EC3-D1EC-4ABE-A9F3-2B3E28CDCF75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0673EC3-D1EC-4ABE-A9F3-2B3E28CDCF75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{F2B28AB4-0DFB-4E7C-8A6E-14E64653F220} = {1CAF36E1-F1CA-4527-A68E-6E10216AAF7F}
 		{3A6AE123-311D-441D-949C-88C681F1ACA2} = {D893E3A6-6D85-4376-8E0D-807B4F5AEE35}
 		{4C73467F-D906-47F0-A139-B4414AE2DB71} = {BB09CA48-F2AB-4C35-80C4-24B151671912}
+		{C0673EC3-D1EC-4ABE-A9F3-2B3E28CDCF75} = {1CAF36E1-F1CA-4527-A68E-6E10216AAF7F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {713F910E-E710-4F21-80E2-84B829208F72}
