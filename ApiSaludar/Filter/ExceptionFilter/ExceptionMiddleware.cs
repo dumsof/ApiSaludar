@@ -1,8 +1,8 @@
-﻿namespace ApiSaludar.Controllers.ExceptionFilter
+﻿namespace ApiSaludar.Filter.ExceptionFilter
 {
     using LoggerService;
     using Microsoft.AspNetCore.Http;
-    using NatilleraWebApi.Models;
+    using ApiSaludar.Models;
     using System;
     using System.Net;
     using System.Threading.Tasks;

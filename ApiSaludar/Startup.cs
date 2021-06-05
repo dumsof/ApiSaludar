@@ -1,6 +1,6 @@
 namespace ApiSaludar
 {
-    using ApiSaludar.Controllers.ExceptionFilter;
+    using ApiSaludar.Extensions;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Server.IIS;
@@ -10,6 +10,7 @@ namespace ApiSaludar
     using Microsoft.Extensions.Hosting;
     using Microsoft.IdentityModel.Logging;
     using Microsoft.OpenApi.Models;
+    using NLog;
     using Saludar.Business.Business;
     using Saludar.Business.IBusiness;
     using Saludar.DataAccess;
@@ -27,6 +28,7 @@ namespace ApiSaludar
     {
         public Startup(IConfiguration configuration)
         {
+            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
             Configuration = configuration;
         }
 
@@ -82,8 +84,6 @@ namespace ApiSaludar
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //app.UseMiddleware<ExceptionMiddleware>();
-
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("../swagger/v1/swagger.json", "Api Saludar v1"));
 
@@ -92,6 +92,8 @@ namespace ApiSaludar
                 IdentityModelEventSource.ShowPII = true;
                 app.UseDeveloperExceptionPage();
             }
+
+            app.ConfigureCustomExceptionMiddleware();
 
             app.UseCors(EnableCors);
 

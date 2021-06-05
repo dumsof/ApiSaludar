@@ -1,4 +1,4 @@
-﻿namespace NatilleraWebApi.Models
+﻿namespace ApiSaludar.Models
 {
     using Newtonsoft.Json;
 

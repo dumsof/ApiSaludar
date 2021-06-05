@@ -17,6 +17,7 @@
         public SaludoEntityDto GetSaludo(Guid idIdioma, Guid idAccion)
         {
             var saludo = this.dbContext.Saludos.FirstOrDefault(c => c.IdIdioma == idIdioma && c.IdAccion == idAccion);
+
             return saludo;
         }
     }
