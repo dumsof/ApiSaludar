@@ -15,7 +15,7 @@ namespace ApiSaludar
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>()
-                    .UseUrls("http://localhost:61828/"); ;
+                    .UseUrls("http://*:8080/"); //este puerto se necesita para alinearlo con el puerto del archivo de dockerfile
                 });
     }
 }
