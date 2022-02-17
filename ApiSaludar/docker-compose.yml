@@ -1,0 +1,21 @@
+﻿version: "3.8"
+
+services:
+  saludarapi:
+   container_name: saludarapi
+   build: .
+   ports:
+    - 8080:8080   
+   links:
+    - sqserver2017
+  sqserver2017:
+    container_name: sqserver2017
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu    
+    ports:
+      - 1430:1433
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: Dar11802Dum.
+      MSSQL_PID: Express    
+
+      
